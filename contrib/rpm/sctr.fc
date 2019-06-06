@@ -1,0 +1,8 @@
+/usr/bin/sctr-cli		--	gen_context(system_u:object_r:sctr_exec_t,s0)
+/usr/sbin/sctrd		--	gen_context(system_u:object_r:sctr_exec_t,s0)
+/usr/lib(64)?/sctr/sctrd		--	gen_context(system_u:object_r:sctr_exec_t,s0)
+
+/etc/sctr(/.*)?		gen_context(system_u:object_r:sctr_conf_t,s0)
+/var/lib/sctr(/.*)?		gen_context(system_u:object_r:sctr_var_lib_t,s0)
+
+(/var)?/run/sctrd(/.*)?   gen_context(system_u:object_r:sctr_var_run_t,s0)

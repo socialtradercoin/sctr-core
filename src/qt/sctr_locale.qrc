@@ -1,0 +1,37 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/sctr_bg.qm</file>
+        <file alias="ca">locale/sctr_ca.qm</file>
+        <file alias="cs">locale/sctr_cs.qm</file>
+        <file alias="da">locale/sctr_da.qm</file>
+        <file alias="de">locale/sctr_de.qm</file>
+        <file alias="en">locale/sctr_en.qm</file>
+        <file alias="en_GB">locale/sctr_en_GB.qm</file>
+        <file alias="en_US">locale/sctr_en_US.qm</file>
+        <file alias="eo">locale/sctr_eo.qm</file>
+        <file alias="es">locale/sctr_es.qm</file>
+        <file alias="es_ES">locale/sctr_es_ES.qm</file>
+        <file alias="fi">locale/sctr_fi.qm</file>
+        <file alias="fr_FR">locale/sctr_fr_FR.qm</file>
+        <file alias="hi_IN">locale/sctr_hi_IN.qm</file>
+        <file alias="hr">locale/sctr_hr.qm</file>
+        <file alias="hr_HR">locale/sctr_hr_HR.qm</file>
+        <file alias="it">locale/sctr_it.qm</file>
+        <file alias="ja">locale/sctr_ja.qm</file>
+        <file alias="ko_KR">locale/sctr_ko_KR.qm</file>
+        <file alias="lt_LT">locale/sctr_lt_LT.qm</file>
+        <file alias="nl">locale/sctr_nl.qm</file>
+        <file alias="pl">locale/sctr_pl.qm</file>
+        <file alias="pt">locale/sctr_pt.qm</file>
+        <file alias="pt_BR">locale/sctr_pt_BR.qm</file>
+        <file alias="ro_RO">locale/sctr_ro_RO.qm</file>
+        <file alias="ru">locale/sctr_ru.qm</file>
+        <file alias="sk">locale/sctr_sk.qm</file>
+        <file alias="sv">locale/sctr_sv.qm</file>
+        <file alias="tr">locale/sctr_tr.qm</file>
+        <file alias="uk">locale/sctr_uk.qm</file>
+        <file alias="vi">locale/sctr_vi.qm</file>
+        <file alias="zh_CN">locale/sctr_zh_CN.qm</file>
+        <file alias="zh_TW">locale/sctr_zh_TW.qm</file>
+    </qresource>
+</RCC>

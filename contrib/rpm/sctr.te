@@ -1,0 +1,81 @@
+policy_module(sctr, 1.100.1)
+
+########################################
+#
+# Declarations
+#
+
+type sctr_t;
+type sctr_exec_t;
+init_daemon_domain(sctr_t, sctr_exec_t)
+
+permissive sctr_t;
+
+type sctr_initrc_exec_t;
+init_script_file(sctr_initrc_exec_t)
+
+type sctr_conf_t;
+files_type(sctr_conf_t)
+
+type sctr_var_lib_t;
+files_type(sctr_var_lib_t)
+
+type sctr_var_run_t;
+files_type(sctr_var_run_t)
+
+type sctr_port_t;
+corenet_port(sctr_port_t)
+
+########################################
+#
+# sctr local policy
+#
+allow sctr_t self:process { fork };
+
+allow sctr_t self:fifo_file rw_fifo_file_perms;
+allow sctr_t self:unix_stream_socket create_stream_socket_perms;
+
+manage_dirs_pattern(sctr_t, sctr_conf_t, sctr_conf_t)
+manage_files_pattern(sctr_t, sctr_conf_t, sctr_conf_t)
+
+manage_dirs_pattern(sctr_t, sctr_var_lib_t, sctr_var_lib_t)
+manage_files_pattern(sctr_t, sctr_var_lib_t, sctr_var_lib_t)
+files_var_lib_filetrans(sctr_t, sctr_var_lib_t, { dir file })
+
+manage_dirs_pattern(sctr_t, sctr_var_run_t, sctr_var_run_t)
+manage_files_pattern(sctr_t, sctr_var_run_t, sctr_var_run_t)
+
+sysnet_dns_name_resolve(sctr_t)
+corenet_all_recvfrom_unlabeled(sctr_t)
+
+allow sctr_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(sctr_t)
+corenet_tcp_sendrecv_generic_node(sctr_t)
+corenet_tcp_sendrecv_all_ports(sctr_t)
+corenet_tcp_bind_generic_node(sctr_t)
+
+gen_require(`
+    type sctr_port_t;
+')
+allow sctr_t sctr_port_t:tcp_socket name_bind;
+
+gen_require(`
+    type sctr_port_t;
+')
+allow sctr_t sctr_port_t:tcp_socket name_connect;
+
+domain_use_interactive_fds(sctr_t)
+
+files_read_etc_files(sctr_t)
+
+miscfiles_read_localization(sctr_t)
+
+sysnet_dns_name_resolve(sctr_t)
+
+allow sctr_t sctr_exec_t:file execute_no_trans;
+allow sctr_t self:process setsched;
+corecmd_exec_ls(sctr_t)
+corenet_tcp_connect_http_port(sctr_t)
+dev_read_urand(sctr_t)
+fs_getattr_xattr_fs(sctr_t)
+kernel_read_system_state(sctr_t)

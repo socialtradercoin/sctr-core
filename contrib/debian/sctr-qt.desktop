@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=SCTR
+Comment=SCTR P2P Cryptocurrency
+Comment[fr]=SCTR, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=SCTR, eşten eşe kriptografik sanal para birimi
+Exec=sctr-qt %u
+Terminal=false
+Type=Application
+Icon=sctr128
+MimeType=x-scheme-handler/sctr;
+Categories=Office;Finance;
